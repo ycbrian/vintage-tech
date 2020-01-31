@@ -12,6 +12,8 @@ import Products from "./pages/Products";
 
 import Header from "./components/Header";
 import Alert from "./components/Alert";
+import PrivateRoute from "./components/PrivateRoute";
+
 import ProductProvider from "./context/products";
 import { CartProvider } from "./context/cart";
 import { UserProvider } from "./context/user";
@@ -33,9 +35,9 @@ export default function App() {
             <Route path="/cart">
               <Cart />
             </Route>
-            <Route path="/checkout">
+            <PrivateRoute path="/checkout" name="john" msg="hello">
               <Checkout />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
