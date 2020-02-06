@@ -17,3 +17,21 @@ export function featuredProduct(data) {
     return item.featured === true;
   });
 }
+
+// paginate
+export function paginate(products) {
+  const itemsPerPage = 4;
+  const numberOfPages = Math.ceil(products.length / itemsPerPage);
+
+  // const newProducts = Array.from({ length: numberOfPages }, () => {
+  //   return products.splice(0, itemsPerPage);
+  // });
+  const newProducts = Array(numberOfPages)
+    .fill(0)
+    .map((items, ind) => {
+      return products.slice(ind * itemsPerPage, (ind + 1) * itemsPerPage);
+    });
+
+  // our code goes here
+  return newProducts;
+}

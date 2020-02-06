@@ -16,7 +16,7 @@ function UserProvider({ children }) {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      console.log(window.pageYOffset);
+      // console.log(window.pageYOffset);
       setHeight(window.pageYOffset);
     });
     return () => window.removeEventListener("scroll", () => {});
